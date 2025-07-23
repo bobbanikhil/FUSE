@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YECS - The Future of Credit Scoring for Young Entrepreneurs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #00ff88;
+            --secondary-color: #0088ff;
+            --accent-color: #ff0088;
+            --bg-color: #0a0a0a;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: #e5e7eb;
+            overflow-x: hidden;
+        }
+        #bg-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        .hero-section {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+        .section {
+            padding: 120px 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        .glass-card {
+            background: rgba(17, 24, 39, 0.5);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        .glass-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 255, 136, 0.15);
+            border-color: rgba(0, 255, 136, 0.3);
+        }
+        .neon-text {
+            color: var(--primary-color);
+            text-shadow: 0 0 5px var(--primary-color), 0 0 15px var(--primary-color), 0 0 30px var(--primary-color);
+        }
+        .pulse-button {
+            animation: pulse 2s infinite;
+            box-shadow: 0 0 15px var(--primary-color), 0 0 30px var(--primary-color);
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        .floating-callout {
+            position: absolute;
+            background: rgba(17, 24, 39, 0.8);
+            backdrop-filter: blur(5px);
+            padding: 0.5rem 1rem;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="bg-gray-900">
+
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 w-full p-6 z-50 flex justify-between items-center">
+        <h1 class="text-3xl font-black neon-text">YECS</h1>
+        <div>
+            <a href="#demo" class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-5 rounded-full text-sm mr-3 transition-colors">Live Demo</a>
+            <a href="#invest" class="bg-[var(--primary-color)] text-gray-900 font-bold py-2 px-5 rounded-full text-sm hover:bg-white transition-colors">Request Investor Demo</a>
+        </div>
+    </header>
+
+    <!-- Section 1: 3D Hero Landing Experience -->
+    <section class="hero-section">
+        <div class="max-w-4xl mx-auto z-10">
+            <h1 class="text-5xl md:text-8xl font-black uppercase tracking-wider">
+                Unlock Founder <span class="neon-text">Potential</span>
+            </h1>
+            <p class="mt-6 text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
+                YECS is the future of credit scoring for young entrepreneurs—an AI-powered, bias-optimized, fully transparent engine that replaces outdated logic with actionable, data-driven insights.
+            </p>
+            <a href="/app" class="mt-10 inline-block bg-[var(--primary-color)] text-gray-900 font-bold py-4 px-12 rounded-full text-xl hover:bg-white transition-colors pulse-button">
+                Calculate Your Score Now
+            </a>
+        </div>
+        <div id="hero-callouts" class="hidden md:block">
+            <div class="floating-callout" style="top: 20%; left: 15%;">👨‍💼 Next-Gen Credit for Founders</div>
+            <div class="floating-callout" style="top: 30%; right: 12%;">🤖 AI. Transparency. Fairness.</div>
+            <div class="floating-callout" style="bottom: 25%; left: 20%;">🚀 Unlock Your Funding Access</div>
+        </div>
+    </section>
+
+    <!-- Section 3: Problem & Solution -->
+    <section class="section bg-black/50">
+        <div class="container mx-auto grid md:grid-cols-2 gap-16 items-center">
+            <div class="glass-card p-8">
+                <h2 class="text-4xl font-bold mb-4 text-red-400">The Problem</h2>
+                <p class="text-gray-300 text-lg">Over <span class="text-red-400 font-bold">90% of young founders</span> are denied funding due to weak or inapplicable credit history. Traditional scores are slow, skewed, and opaque, creating a massive barrier to innovation.</p>
+            </div>
+            <div class="glass-card p-8">
+                <h2 class="text-4xl font-bold mb-4 neon-text">The Solution</h2>
+                <p class="text-gray-300 text-lg">YECS builds a score from modern, real-life signals: payment data, business plan quality, social proof, and education. Our AI gives founders a clear roadmap to funding readiness.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Live Score Simulator -->
+    <section id="demo" class="section">
+        <h2 class="text-center text-5xl font-bold mb-12">Investor Eye Candy: <span class="neon-text">Live Simulator</span></h2>
+        <div class="container mx-auto max-w-5xl glass-card p-10">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-3xl font-bold mb-6">Simulate a Founder's Profile</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <label for="income" class="block text-sm font-medium text-gray-300">Monthly Income: <span id="income-val" class="font-bold text-white">$5,000</span></label>
+                            <input type="range" id="income" min="500" max="20000" value="5000" class="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-[var(--primary-color)]">
+                        </div>
+                        <div>
+                            <label for="debt" class="block text-sm font-medium text-gray-300">Total Debt: <span id="debt-val" class="font-bold text-white">$10,000</span></label>
+                            <input type="range" id="debt" min="0" max="50000" value="10000" class="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-[var(--primary-color)]">
+                        </div>
+                        <div>
+                            <label for="experience" class="block text-sm font-medium text-gray-300">Years of Experience: <span id="experience-val" class="font-bold text-white">2</span></label>
+                            <input type="range" id="experience" min="0" max="10" value="2" class="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-[var(--primary-color)]">
+                        </div>
+                    </div>
+                </div>
+                <div id="score-orb-container" class="h-64 flex items-center justify-center">
+                    <!-- 3D Score Orb will be rendered here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6: Tech/AI Innovation Highlight -->
+    <section class="section bg-black/50">
+        <h2 class="text-center text-5xl font-bold mb-12">Disruptive <span class="neon-text">Technology</span></h2>
+        <div class="container mx-auto grid md:grid-cols-3 gap-8">
+            <div class="glass-card p-6 text-center">
+                <h3 class="text-2xl font-bold mb-2 text-[var(--secondary-color)]">AI Copilot</h3>
+                <p>"Ask anything" live chat for personalized financial strategy and what-if scenario simulation.</p>
+            </div>
+            <div class="glass-card p-6 text-center">
+                <h3 class="text-2xl font-bold mb-2 text-[var(--secondary-color)]">Real-Time Bias Mitigation</h3>
+                <p>Automatic compliance & transparency dashboard with color-coded demographic equity checks.</p>
+            </div>
+            <div class="glass-card p-6 text-center">
+                <h3 class="text-2xl font-bold mb-2 text-[var(--secondary-color)]">Bank-Level Security</h3>
+                <p>End-to-end encryption, data provenance checks, and secure infrastructure to protect user data.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 8: Traction & Roadmap -->
+    <section class="section">
+        <h2 class="text-center text-5xl font-bold mb-12">Traction & <span class="neon-text">Roadmap</span></h2>
+        <div class="container mx-auto max-w-4xl">
+            <div class="glass-card p-8">
+                <ul class="space-y-4 text-lg">
+                    <li class="flex items-center"><span class="text-green-400 mr-3">✅</span> Closed beta with 2,000+ users & 100+ lenders.</li>
+                    <li class="flex items-center"><span class="text-green-400 mr-3">✅</span> Regulatory pilots with regional banks initiated.</li>
+                    <li class="flex items-center"><span class="text-blue-400 mr-3">➡️</span> <strong>Q3 2025:</strong> Account aggregator integration for real-time cashflow.</li>
+                    <li class="flex items-center"><span class="text-blue-400 mr-3">➡️</span> <strong>Q4 2025:</strong> Full mobile app with 3D onboarding and AR score preview.</li>
+                    <li class="flex items-center"><span class="text-blue-400 mr-3">➡️</span> <strong>Q1 2026:</strong> Expansion into EU market.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 10: Call To Action -->
+    <section id="invest" class="section text-center bg-black/50">
+        <h2 class="text-5xl font-bold">Join the <span class="neon-text">Future of Finance</span></h2>
+        <p class="mt-6 text-lg text-gray-300 max-w-2xl mx-auto">YECS is not just a product; it's a movement to empower the next generation of economic drivers. Let's build a more equitable financial system together.</p>
+        <a href="mailto:investors@yecs.ai" class="mt-10 inline-block bg-[var(--primary-color)] text-gray-900 font-bold py-4 px-12 rounded-full text-xl hover:bg-white transition-colors pulse-button">
+            Request Investor Deck
+        </a>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    <script>
+        // --- 3D Background ---
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('bg-canvas'), antialias: true, alpha: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+
+        const particleCount = 7000;
+        const positions = new Float32Array(particleCount * 3);
+        const colors = new Float32Array(particleCount * 3);
+        const color = new THREE.Color();
+
+        for (let i = 0; i < particleCount; i++) {
+            positions[i * 3] = (Math.random() - 0.5) * 15;
+            positions[i * 3 + 1] = (Math.random() - 0.5) * 15;
+            positions[i * 3 + 2] = (Math.random() - 0.5) * 15;
+
+            const randomColor = Math.random();
+            if (randomColor < 0.33) color.set(0x00ff88); // primary
+            else if (randomColor < 0.66) color.set(0x0088ff); // secondary
+            else color.set(0xff0088); // accent
+
+            colors[i * 3] = color.r;
+            colors[i * 3 + 1] = color.g;
+            colors[i * 3 + 2] = color.b;
+        }
+
+        const particlesGeometry = new THREE.BufferGeometry();
+        particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+        particlesGeometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+
+        const particleMaterial = new THREE.PointsMaterial({
+            size: 0.02,
+            vertexColors: true,
+            transparent: true,
+            blending: THREE.AdditiveBlending,
+            depthWrite: false
+        });
+
+        const particleSystem = new THREE.Points(particlesGeometry, particleMaterial);
+        scene.add(particleSystem);
+        camera.position.z = 5;
+
+        let mouseX = 0, mouseY = 0;
+        document.addEventListener('mousemove', (event) => {
+            mouseX = event.clientX - window.innerWidth / 2;
+            mouseY = event.clientY - window.innerHeight / 2;
+        });
+
+        const clock = new THREE.Clock();
+        function animateBg() {
+            const elapsedTime = clock.getElapsedTime();
+            particleSystem.rotation.y = elapsedTime * 0.05;
+            camera.position.x += (mouseX * 0.00005 - camera.position.x) * 0.05;
+            camera.position.y += (-mouseY * 0.00005 - camera.position.y) * 0.05;
+            camera.lookAt(scene.position);
+            renderer.render(scene, camera);
+            requestAnimationFrame(animateBg);
+        }
+        animateBg();
+
+        // --- 3D Score Orb ---
+        const orbContainer = document.getElementById('score-orb-container');
+        const orbScene = new THREE.Scene();
+        const orbCamera = new THREE.PerspectiveCamera(75, orbContainer.clientWidth / orbContainer.clientHeight, 0.1, 1000);
+        const orbRenderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        orbRenderer.setSize(orbContainer.clientWidth, orbContainer.clientHeight);
+        orbContainer.appendChild(orbRenderer.domElement);
+
+        const orbGeometry = new THREE.IcosahedronGeometry(1.5, 15);
+        const orbMaterial = new THREE.MeshStandardMaterial({
+            color: 0x00ff88,
+            emissive: 0x00ff88,
+            emissiveIntensity: 0.5,
+            metalness: 0.1,
+            roughness: 0.2,
+            transparent: true,
+            opacity: 0.7
+        });
+        const wireframeMaterial = new THREE.MeshBasicMaterial({ color: 0x00ff88, wireframe: true, transparent: true, opacity: 0.1 });
+
+        const orb = new THREE.Mesh(orbGeometry, orbMaterial);
+        const wireframe = new THREE.Mesh(orbGeometry, wireframeMaterial);
+        orb.add(wireframe);
+        orbScene.add(orb);
+
+        const pointLight = new THREE.PointLight(0xffffff, 1);
+        pointLight.position.set(5, 5, 5);
+        orbScene.add(pointLight);
+        orbScene.add(new THREE.AmbientLight(0xffffff, 0.5));
+        orbCamera.position.z = 3;
+
+        let scoreTextSprite;
+        function createScoreText(score, color) {
+            if(scoreTextSprite) orbScene.remove(scoreTextSprite);
+            const canvas = document.createElement('canvas');
+            const context = canvas.getContext('2d');
+            context.font = "Bold 80px Inter";
+            context.fillStyle = color;
+            context.textAlign = "center";
+            context.textBaseline = "middle";
+            context.fillText(score, canvas.width / 2, canvas.height / 2);
+            const texture = new THREE.CanvasTexture(canvas);
+            const material = new THREE.SpriteMaterial({ map: texture });
+            scoreTextSprite = new THREE.Sprite(material);
+            scoreTextSprite.scale.set(2, 1, 1);
+            orbScene.add(scoreTextSprite);
+        }
+
+        function animateOrb() {
+            orb.rotation.y += 0.005;
+            orbRenderer.render(orbScene, orbCamera);
+            requestAnimationFrame(animateOrb);
+        }
+        animateOrb();
+
+        // --- GSAP Animations ---
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.from(".hero-section h1", { duration: 1, y: 50, opacity: 0, delay: 0.5 });
+        gsap.from(".hero-section p", { duration: 1, y: 50, opacity: 0, delay: 0.8 });
+        gsap.from(".hero-section a", { duration: 1, y: 50, opacity: 0, delay: 1.1 });
+        gsap.from(".floating-callout", { duration: 1, scale: 0, opacity: 0, delay: 1.5, stagger: 0.2 });
+
+        document.querySelectorAll('.section').forEach(section => {
+            gsap.from(section.children, {
+                scrollTrigger: { trigger: section, start: "top 80%", end: "bottom 20%", toggleActions: "play none none reverse" },
+                opacity: 0, y: 50, duration: 1, stagger: 0.2
+            });
+        });
+
+        // --- Simulator Logic ---
+        const sliders = ['income', 'debt', 'experience'].map(id => document.getElementById(id));
+        const vals = ['income-val', 'debt-val', 'experience-val'].map(id => document.getElementById(id));
+
+        function updateScore() {
+            const [income, debt, experience] = sliders.map(s => parseInt(s.value));
+            vals[0].textContent = `$${income.toLocaleString()}`;
+            vals[1].textContent = `$${debt.toLocaleString()}`;
+            vals[2].textContent = experience;
+
+            let score = 300 + (income / 20000) * 250 - (debt / 50000) * 150 + (experience / 10) * 150;
+            score = Math.min(Math.max(Math.round(score), 300), 850);
+
+            let color;
+            if (score > 740) color = '#00ff88';
+            else if (score > 620) color = '#ffff00';
+            else color = '#ff0088';
+
+            orbMaterial.color.set(color);
+            orbMaterial.emissive.set(color);
+            createScoreText(score, 'white');
+        }
+        sliders.forEach(slider => slider.addEventListener('input', updateScore));
+        updateScore();
+
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+
+            orbCamera.aspect = orbContainer.clientWidth / orbContainer.clientHeight;
+            orbCamera.updateProjectionMatrix();
+            orbRenderer.setSize(orbContainer.clientWidth, orbContainer.clientHeight);
+        });
+    </script>
+</body>
+</html>
