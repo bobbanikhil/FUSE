@@ -1,9 +1,7 @@
-  ```sh
-        #!/usr/bin/env bash
-        # exit on error
-        set -o errexit
+#!/usr/bin/env bash
+# exit on error
+set -o errexit
 
-        pip install -r requirements.txt
+pip install -r requirements.txt
 
-        echo "Build complete."
-        ```
+echo "Build complete."
